@@ -1,28 +1,25 @@
-# VersioningDemo
+###Comandos a usar
 
-A quick demo to display how to handle versioning with maven
+	mvn package
 
-In order to get this setup you clone this repository into your own github account. Then you follow the description [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to set your ssh keys up for github.
+Ejecutar el jar con dependencias que esta en target/
 
-When this is done you should be able to push new changes using ssh and that's required to push the new release.
+	java -jar ...
 
-If you have any questions of additions to this documentation then please create a pull request or issue.
 
-I made a video explaining this repo in full. Please watch [https://www.youtube.com/edit?o=U&video_id=8j7Jn2uHK3Y](https://www.youtube.com/edit?o=U&video_id=8j7Jn2uHK3Y)
+	mvn release:prepare
 
-### Commands for building
+Si hay cambios antes de subir el archivo, borra el archivo 'release.properties'
 
-To create a package of your build
-```
-mvn package
-```
+	mvn release:clean
 
-To prepare a build and create a new release tag on github
-```
-mvn release:prepare
-```
+Agregar los cambios si se quiere, y hacer push
 
-To perform the actual release and get the source, javadoc and jar-with-dependencies
-```
-mvn release:perform
-```
+	mvn release:prepare
+
+	mvn release:perform ( para construir la version localmente, va a git hace checkout al directorio local y la construye el release)
+
+
+	java -jar target/checkout/target/Version....jar (Fijarse que no dice snapshot en ninguna parte)
+
+	url video explicativo : https://www.youtube.com/watch?v=8j7Jn2uHK3Y

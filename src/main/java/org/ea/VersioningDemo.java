@@ -1,5 +1,7 @@
 package org.ea;
 
+import java.util.Date;
+
 /**
  * Versioning demo created by Daniel Persson
  */
@@ -9,5 +11,9 @@ public class VersioningDemo {
         System.out.println();
         System.out.println("This program is running version "+
                 VersioningDemo.class.getPackage().getImplementationVersion());
+
+        System.out.println();
+        System.out.println(new Date());
+
     }
 }
